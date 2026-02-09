@@ -1,2 +1,2 @@
 # MCP_Client_And_Server
-First built-in MCP client and server
+First built-in MCP-powered AI Assistant for Internal System
