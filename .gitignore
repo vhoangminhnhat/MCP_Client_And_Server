@@ -1,0 +1,30 @@
+# Node
+node_modules/
+package-lock.json
+
+# Build outputs
+dist/
+build/
+.next/
+coverage/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Misc
+*.tsbuildinfo
