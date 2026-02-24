@@ -18,6 +18,11 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
 
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"]
+    },
+
     "noEmit": true
   },
   "include": [
