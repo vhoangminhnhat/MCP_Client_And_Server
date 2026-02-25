@@ -69,14 +69,14 @@ class Main extends Component<IMainFeature, IMainState> {
             <AntFooter className="xl:flex hidden w-full mt-auto bg-white">
               <p>
                 {" "}
-                Copyright © 2025 by{" "}
+                Copyright © 2026 by{" "}
                 <a
                   target="_blank"
                   className="hover:text-blue-600 font-[700] hover:underline"
                   href="https://phuongquan.vn/"
                   rel="noreferrer"
                 >
-                  Phuong Quan
+                  Minh Nhat - Senior FE Developer
                 </a>
                 .{" "}
               </p>
