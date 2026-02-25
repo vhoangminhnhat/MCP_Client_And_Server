@@ -4,6 +4,7 @@
     "module": "CommonJS",
     "target": "ES2022",
     "outDir": "./dist",
+    "moduleResolution": "Node",
     "declaration": true,
     "sourceMap": true,
 
@@ -12,7 +13,11 @@
 
     "incremental": true,
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"]
+    }
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
