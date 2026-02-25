@@ -1,3 +1,4 @@
+import { SidebarInjection } from "@/generalComponents/layoutComponent/sidebar/domain/entities/SidebarInjection";
 import { container } from "tsyringe";
 import { constructor } from "tsyringe/dist/typings/types";
 
@@ -19,7 +20,9 @@ export class DependencyInjection {
     }
   }
 
-  private static registerAllTokens() {}
+  private static registerAllTokens() {
+    SidebarInjection.injectSidebarConfig();
+  }
 
   private static checkInjectionAndResolve() {
     this.registeredToken.forEach((token) => {
