@@ -16,4 +16,17 @@ export class UserRepository implements IUserRepository {
 
     return new User(user.id, user.email, user.password, user.role);
   }
+
+  async createUser(user: User): Promise<User> {
+    const created = await this.prisma.user.create({
+      data: {
+        id: user.id,
+        email: user.email,
+        password: user.passwordHash,
+        role: user.role,
+      },
+    });
+
+    return new User(created.id, created.email, created.password, created.role);
+  }
 }

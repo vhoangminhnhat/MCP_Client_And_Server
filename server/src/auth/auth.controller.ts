@@ -1,10 +1,15 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import { LoginUseCase } from './application/login.usecase';
+import { SignUpUseCase } from './application/signUp.usecase';
 import { LoginDto } from './dto/login.dto';
+import { SignUpDto } from './dto/signUp.dto';
 
 @Controller('auth')
 export class AuthController {
-  constructor(private readonly loginUseCase: LoginUseCase) {}
+  constructor(
+    private readonly loginUseCase: LoginUseCase,
+    private readonly signUpUseCase: SignUpUseCase,
+  ) {}
 
   @Post('login')
   async login(@Body() dto: LoginDto) {
@@ -12,5 +17,10 @@ export class AuthController {
       dto.email as string,
       dto.password as string,
     );
+  }
+
+  @Post('singUp')
+  async signUp(@Body() dto: SignUpDto) {
+    return this.signUpUseCase.execute(dto);
   }
 }

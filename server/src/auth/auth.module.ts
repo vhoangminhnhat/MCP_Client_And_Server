@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
 import { LoginUseCase } from './application/login.usecase';
+import { SignUpUseCase } from './application/signUp.usecase';
 import { AuthController } from './auth.controller';
-import { USER_REPOSITORY } from './domain/token/user.repository.token';
+import { UserToken } from './domain/token/user.repository.token';
 import { UserRepository } from './infrastructure/user.repository';
 
 @Module({
@@ -15,8 +16,9 @@ import { UserRepository } from './infrastructure/user.repository';
   controllers: [AuthController],
   providers: [
     LoginUseCase,
+    SignUpUseCase,
     {
-      provide: USER_REPOSITORY,
+      provide: UserToken.USER_REPOSITORY,
       useClass: UserRepository,
     },
   ],
