@@ -22,6 +22,6 @@ import { UserRepository } from './infrastructure/user.repository';
       useClass: UserRepository,
     },
   ],
-  exports: [LoginUseCase],
+  exports: [LoginUseCase, SignUpUseCase],
 })
 export class AuthModule {}
