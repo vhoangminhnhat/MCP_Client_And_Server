@@ -14,7 +14,7 @@ export class SummaryInfo {
 }
 
 export class BasedApiResponseModel<T extends Object> {
-  passedDelete: any;
+  passedDelete?: any;
   constructor(
     public code?: number,
     public data?: T,

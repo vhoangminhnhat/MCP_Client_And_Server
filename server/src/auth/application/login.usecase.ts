@@ -26,12 +26,13 @@ export class LoginUseCase {
     }
 
     const payload = {
-      sub: user.id,
+      id: user.id,
       email: user.email,
       role: user.role,
     };
 
     return {
+      user: payload,
       accessToken: this.jwtService.sign(payload),
     };
   }

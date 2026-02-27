@@ -52,6 +52,7 @@ export class SignUpUseCase {
       };
 
       return {
+        user: payload,
         accessToken: this.jwtService.sign(payload),
       };
     }
