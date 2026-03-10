@@ -8,3 +8,7 @@ export class AuthenApiPath {
   static login = VersionPaths.getVersionPath("login", "v1");
   static signUp = VersionPaths.getVersionPath("signUp", "v1");
 }
+
+export class ChatApiPath {
+  static messages = VersionPaths.getVersionPath("chat/messages", "v1");
+}

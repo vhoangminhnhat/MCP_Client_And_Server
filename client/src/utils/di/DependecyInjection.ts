@@ -1,3 +1,4 @@
+import { ChatInjection } from "@/features/chatFeature/diInjection/ChatInjection";
 import { SidebarInjection } from "@/generalComponents/layoutComponent/sidebar/domain/entities/SidebarInjection";
 import { container } from "tsyringe";
 import { constructor } from "tsyringe/dist/typings/types";
@@ -22,6 +23,7 @@ export class DependencyInjection {
 
   private static registerAllTokens() {
     SidebarInjection.injectSidebarConfig();
+    ChatInjection.injectChat();
   }
 
   private static checkInjectionAndResolve() {
