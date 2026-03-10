@@ -17,6 +17,8 @@ import {
 import "./App.css";
 import { AuthenContext } from "./context/AuthenticationContext";
 import { IAuthenticationContext } from "./context/interface/IAuthenticationContext";
+import { AuthenToken } from "./features/loginFeature/diInjection/AuthenToken";
+import LoginFeature from "./features/loginFeature/presentation/views/LoginFeature";
 import { higherOrderComponent } from "./generalComponents/higherOrderComponent/HigherOrderComponent";
 import PrivateRoute from "./generalComponents/layoutComponent/privateRoute/PrivateRoute";
 import { MenuConfigModel } from "./generalComponents/layoutComponent/sidebar/data/dto/SidebarMenuConfigModel";
@@ -195,15 +197,15 @@ function App() {
 
   return (
     <Routes>
-      {/* <Route
+      <Route
         path="/login"
         element={
           <LoginFeature
             navigate={navigate}
-            token={AuthenticationToken.LoginViewModel}
+            token={AuthenToken.AuthenViewModel}
           />
         }
-      ></Route> */}
+      ></Route>
       <>{pageRendering()}</>
       <Route
         path="/404"
