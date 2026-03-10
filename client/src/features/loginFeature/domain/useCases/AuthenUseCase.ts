@@ -1,9 +1,10 @@
 import { BasedApiResponseModel } from "@/api/basedApiModel/BasedApiResponseModel";
-import { AuthenInjection } from "../../data/diInjection/AuthenInjection";
+import { strings } from "@/utils/localizedStrings";
+import { injectable } from "tsyringe";
 import { AuthenRequestModel } from "../../data/dto/AuthenRequestModel";
 import { AuthenEntity } from "../entities/AuthenEntity";
 import { IAuthenRepository } from "../repositories/IAuthenRepository";
-import { injectable } from "tsyringe";
+import { AuthenInjection } from "../../diInjection/AuthenInjection";
 
 @injectable()
 export class AuthenUseCase {
@@ -20,7 +21,11 @@ export class AuthenUseCase {
     if (isValidateEmail) {
       return await this.authenRepository.login(body);
     } else {
-      return {};
+      return {
+        message: strings.GlobalMessage.Email,
+        data: {},
+        code: -999,
+      };
     }
   }
 
@@ -34,7 +39,11 @@ export class AuthenUseCase {
     if (isValidatePassword && isValidateEmail) {
       return await this.authenRepository.singUp(body);
     } else {
-      return {};
+      return {
+        message: strings.GlobalMessage.Error,
+        data: {},
+        code: -999,
+      };
     }
   }
 }

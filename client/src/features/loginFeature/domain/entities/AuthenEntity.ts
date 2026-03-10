@@ -1,8 +1,4 @@
-import { ClientHelpers } from "@/utils/helpers";
-import { strings } from "@/utils/localizedStrings";
-import { AuthenRequestModel } from "../../data/dto/AuthenRequestModel";
-
-export class AuthenEntity implements AuthenRequestModel {
+export class AuthenEntity {
   email?: string | undefined;
   password?: string | undefined;
 
@@ -12,19 +8,10 @@ export class AuthenEntity implements AuthenRequestModel {
   }
 
   static validatePassword(password: string) {
-    if (password?.length <= 6) {
-      ClientHelpers.getMessage(
-        strings.GlobalMessage.PasswordLength,
-        3,
-        "error",
-      );
-      return false;
-    } else if (password.toUpperCase() && password !== password.toLowerCase()) {
-      ClientHelpers.getMessage(
-        strings.GlobalMessage.PasswordNotMatch,
-        3,
-        "error",
-      );
+    if (
+      password?.length <= 6 ||
+      (password.toUpperCase() && password !== password.toLowerCase())
+    ) {
       return false;
     } else {
       return true;

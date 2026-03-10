@@ -1,7 +1,7 @@
 import { DependencyInjection } from "@/utils/di/DependecyInjection";
-import { IAuthenRepository } from "../../domain/repositories/IAuthenRepository";
-import { AuthenUseCase } from "../../domain/useCases/AuthenUseCase";
-import { AuthenImpl } from "../model/AuthenImpl";
+import { AuthenImpl } from "../data/model/AuthenImpl";
+import { IAuthenRepository } from "../domain/repositories/IAuthenRepository";
+import { AuthenUseCase } from "../domain/useCases/AuthenUseCase";
 import { AuthenToken } from "./AuthenToken";
 
 export class AuthenInjection {
