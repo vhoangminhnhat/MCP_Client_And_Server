@@ -1,4 +1,4 @@
-import { ClientContext } from "@/context/AuthenticationContext";
+import { ClientContext } from "context/AuthenticationContext";
 import { Component, ContextType } from "react";
 import { Params } from "react-router-dom";
 import { NextObserver, Observable } from "rxjs";
@@ -40,6 +40,9 @@ export abstract class BasedViews<
 
   protected bindViewModel(): void {
     this.viewModel.context = this.context;
+    if (this.props.sharedVM) {
+      this.viewModel = this.props.sharedVM as VM;
+    }
   }
 
   protected dispose(): void {}
