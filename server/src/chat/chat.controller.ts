@@ -1,9 +1,9 @@
 import { Body, Controller, Get, Post, Query, UseGuards } from '@nestjs/common';
-import { JwtAuthGuard } from '@/auth/guards/jwt-auth.guard';
-import { CreateMessageUseCase } from './application/create-message.usecase';
-import { GetMessagesUseCase } from './application/get-messages.usecase';
-import { CreateChatMessageDto } from './dto/create-chat-message.dto';
-import { GetChatMessagesDto } from './dto/get-chat-messages.dto';
+import { JwtAuthGuard } from '@/auth/guards/jwtAuth.guard';
+import { CreateMessageUseCase } from './application/createMessage.useCase';
+import { GetMessagesUseCase } from './application/getMessages.useCase';
+import { CreateChatMessageDto } from './dto/createChatMessage.dto';
+import { GetChatMessagesDto } from './dto/getChatMessages.dto';
 
 @Controller('chat')
 @UseGuards(JwtAuthGuard)

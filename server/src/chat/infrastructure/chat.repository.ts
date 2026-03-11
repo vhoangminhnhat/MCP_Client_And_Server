@@ -1,6 +1,6 @@
 import { PrismaService } from '@/prisma/prisma.service';
 import { Injectable } from '@nestjs/common';
-import { ChatMessage } from '../domain/entity/chat-message.entity';
+import { ChatMessage } from '../domain/entity/chatMessage.entity';
 import { IChatRepository } from '../domain/interface/chat.repository.interface';
 
 @Injectable()

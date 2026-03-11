@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { okResponse } from '@/common/models/api-response.model';
+import { okResponse } from '@/common/models/apiResponse.model';
 import { IChatRepository } from '../domain/interface/chat.repository.interface';
 import { ChatToken } from '../domain/token/chat.repository.token';
 

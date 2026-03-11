@@ -5,7 +5,7 @@ import { SignUpUseCase } from './application/signUp.usecase';
 import { AuthController } from './auth.controller';
 import { jwtConstants } from './constants/jwt.constants';
 import { UserToken } from './domain/token/user.repository.token';
-import { JwtAuthGuard } from './guards/jwt-auth.guard';
+import { JwtAuthGuard } from './guards/jwtAuth.guard';
 import { UserRepository } from './infrastructure/user.repository';
 
 @Module({

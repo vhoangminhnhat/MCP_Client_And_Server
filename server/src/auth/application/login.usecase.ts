@@ -1,7 +1,7 @@
 import { Inject, Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
-import { okResponse } from '@/common/models/api-response.model';
+import { okResponse } from '@/common/models/apiResponse.model';
 import { IUserRepository } from '../domain/interface/user.repository.interface';
 import { UserToken } from '../domain/token/user.repository.token';
 
