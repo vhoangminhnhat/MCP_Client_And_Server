@@ -1,8 +1,8 @@
-import { ClientContext } from "@/context/AuthenticationContext";
-import { IAuthenticationContext } from "@/context/interface/IAuthenticationContext";
-import { colorFormat } from "@/utils/format/ColorFormat";
+import { ClientContext } from "context/AuthenticationContext";
+import { IAuthenticationContext } from "context/interface/IAuthenticationContext";
+import { colorFormat } from "utils/format/ColorFormat";
 import { Menu } from "antd";
-import companyLogo from "assets/images/company_logo.png";
+import companyLogo from "logo.svg";
 import { Component, ContextType, createRef, ReactNode } from "react";
 import { NavigateFunction, NavLink } from "react-router-dom";
 import { MenuConfigModel } from "../data/dto/SidebarMenuConfigModel";
@@ -21,7 +21,6 @@ interface ISidebarState {
 
 export default class Sidebar extends Component<ISidebar, ISidebarState> {
   static contextType = ClientContext;
-  declare context: ContextType<typeof ClientContext>;
 
   private sidebarRef = createRef<HTMLDivElement>();
 
@@ -82,7 +81,8 @@ export default class Sidebar extends Component<ISidebar, ISidebarState> {
   }
 
   private getSideNav() {
-    const { menuConfig } = this.context as IAuthenticationContext;
+    const { menuConfig } = this.context as ContextType<typeof ClientContext> &
+      IAuthenticationContext;
     const { pathname } = this.props.location;
 
     return menuConfig?.menu.map((menu) => {

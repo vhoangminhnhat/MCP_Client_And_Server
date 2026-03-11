@@ -1,4 +1,4 @@
-import { ISelectOps } from "@/generalComponents/filterComponent/interface/IFilterComponent";
+import { ISelectOps } from "generalComponents/filterComponent/interface/IFilterComponent";
 import { FormInstance } from "antd";
 import { isEmpty, isUndefined } from "lodash";
 import { CachedKeyEnum } from "../enum/CachedKeyEnum";

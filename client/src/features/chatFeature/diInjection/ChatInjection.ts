@@ -1,4 +1,4 @@
-import { DependencyInjection } from '@/utils/di/DependecyInjection';
+import { DependencyInjection } from 'utils/di/DependecyInjection';
 import { ChatImpl } from '../data/ChatImpl';
 import { IChatRepository } from '../domain/repositories/IChatRepository';
 import { ChatUseCase } from '../domain/useCases/ChatUseCase';

@@ -1,4 +1,4 @@
-import { DependencyInjection } from "@/utils/di/DependecyInjection";
+import { DependencyInjection } from "utils/di/DependecyInjection";
 import { SidebarMenuConfigRepository } from "../../data/model/SidebarMenuConfigRepository";
 import { IConfigRepository } from "../repositories/IConfigRepository";
 import { SidebarUseCase } from "../useCases/SidebarUseCase";

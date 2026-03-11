@@ -1,5 +1,5 @@
-import { NumberFormat } from "@/utils/format/NumberFormat";
-import { ClientHelpers } from "@/utils/helpers";
+import { NumberFormat } from "utils/format/NumberFormat";
+import { ClientHelpers } from "utils/helpers";
 import { Col, Form, Input, InputNumber, Select, TreeSelect } from "antd";
 import { DataNode } from "antd/es/tree";
 import dayjs from "dayjs";

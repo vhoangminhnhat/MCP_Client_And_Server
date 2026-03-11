@@ -1,5 +1,5 @@
-import { DataFormat } from "@/utils/format/DataFormat";
-import { NumberFormat } from "@/utils/format/NumberFormat";
+import { DataFormat } from "utils/format/DataFormat";
+import { NumberFormat } from "utils/format/NumberFormat";
 import {
   Col,
   DatePicker,

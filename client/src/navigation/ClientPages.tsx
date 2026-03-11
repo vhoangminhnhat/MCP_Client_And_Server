@@ -1,5 +1,5 @@
-import { ChatToken } from "@/features/chatFeature/diInjection/ChatToken";
-import NotFoundComponent from "@/generalComponents/notFoundComponent/NotFoundComponent";
+import { ChatToken } from "features/chatFeature/diInjection/ChatToken";
+import NotFoundComponent from "generalComponents/notFoundComponent/NotFoundComponent";
 import { ComponentType, FC, LazyExoticComponent, lazy } from "react";
 
 export interface IClientPages {
@@ -12,7 +12,7 @@ export class ClientPages {
   static PageKeys: Record<string, IClientPages> = {
     ChatFeature: {
       Component: lazy(
-        () => import("@/features/chatFeature/presentation/view/ChatFeature"),
+        () => import("features/chatFeature/presentation/view/ChatFeature"),
       ) as unknown as LazyExoticComponent<FC<any> | ComponentType>,
       token: ChatToken.ChatViewModel,
     },

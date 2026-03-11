@@ -1,4 +1,6 @@
+import { UserResponseModel } from "../../data/dto/UserResponseModel";
+
 export class AuthenReponseEntity {
-  email?: string;
-  role?: string;
+  accessToken?: string;
+  user?: UserResponseModel;
 }

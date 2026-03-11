@@ -1,6 +1,6 @@
-import { IAuthenticationContext } from '@/context/interface/IAuthenticationContext';
-import { ClientHelpers } from '@/utils/helpers';
-import { BasedViews, IBasedViews } from '@/utils/basedModel/BasedViews';
+import { IAuthenticationContext } from 'context/interface/IAuthenticationContext';
+import { ClientHelpers } from 'utils/helpers';
+import { BasedViews, IBasedViews } from 'utils/basedModel/BasedViews';
 import { Button, Card, Input, List, Spin, Typography } from 'antd';
 import dayjs from 'dayjs';
 import { isEmpty } from 'lodash';

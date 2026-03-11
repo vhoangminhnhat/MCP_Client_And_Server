@@ -1,11 +1,11 @@
-import { SidebarMenuConfigModel } from "@/generalComponents/layoutComponent/sidebar/data/dto/SidebarMenuConfigModel";
-import { SidebarInjection } from "@/generalComponents/layoutComponent/sidebar/domain/entities/SidebarInjection";
-import { productCache } from "@/utils/cache/ProductCache";
-import { CachedKeyEnum } from "@/utils/enum/CachedKeyEnum";
-import { DataFormat } from "@/utils/format/DataFormat";
-import { ClientHelpers } from "@/utils/helpers";
-import useScreenSize from "@/utils/hooks/useScreenSize";
-import { strings } from "@/utils/localizedStrings";
+import { SidebarMenuConfigModel } from "generalComponents/layoutComponent/sidebar/data/dto/SidebarMenuConfigModel";
+import { SidebarInjection } from "generalComponents/layoutComponent/sidebar/domain/entities/SidebarInjection";
+import { productCache } from "utils/cache/ProductCache";
+import { CachedKeyEnum } from "utils/enum/CachedKeyEnum";
+import { DataFormat } from "utils/format/DataFormat";
+import { ClientHelpers } from "utils/helpers";
+import useScreenSize from "utils/hooks/useScreenSize";
+import { strings } from "utils/localizedStrings";
 import { isEmpty, isUndefined } from "lodash";
 import {
   createContext,

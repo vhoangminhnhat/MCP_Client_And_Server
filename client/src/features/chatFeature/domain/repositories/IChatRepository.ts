@@ -1,4 +1,4 @@
-import { BasedApiResponseModel } from '@/api/basedApiModel/BasedApiResponseModel';
+import { BasedApiResponseModel } from 'api/basedApiModel/BasedApiResponseModel';
 import { ChatMessageRequestEntity } from '../entities/ChatMessageRequestEntity';
 import { ChatMessageResponseEntity } from '../entities/ChatMessageResponseEntity';
 

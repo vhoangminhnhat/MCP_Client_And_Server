@@ -1,4 +1,4 @@
-import { IBasedViews } from "@/utils/basedModel/BasedViews";
+import { IBasedViews } from "utils/basedModel/BasedViews";
 import { Form } from "antd";
 import { ElementType } from "react";
 import { useLocation, useNavigate } from "react-router-dom";

@@ -2,7 +2,7 @@ import {
   IMultiSelectOps,
   ISelectOps,
   ITreeSelectOps,
-} from "@/generalComponents/filterComponent/interface/IFilterComponent";
+} from "generalComponents/filterComponent/interface/IFilterComponent";
 import { Rule } from "antd/es/form";
 import { ReactNode } from "react";
 

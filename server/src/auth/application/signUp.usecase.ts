@@ -3,6 +3,7 @@ import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
 import { randomUUID } from 'crypto';
 import { isEmpty, isUndefined } from 'lodash';
+import { okResponse } from '@/common/models/api-response.model';
 import { User } from '../domain/entity/user.entity';
 import { IUserRepository } from '../domain/interface/user.repository.interface';
 import { UserToken } from '../domain/token/user.repository.token';
@@ -51,10 +52,13 @@ export class SignUpUseCase {
         role: savedUser.role,
       };
 
-      return {
-        user: payload,
-        accessToken: this.jwtService.sign(payload),
-      };
+      return okResponse(
+        {
+          user: payload,
+          accessToken: this.jwtService.sign(payload),
+        },
+        'Sign up successfully',
+      );
     }
   }
 }

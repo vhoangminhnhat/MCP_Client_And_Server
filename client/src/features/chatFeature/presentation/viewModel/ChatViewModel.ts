@@ -1,5 +1,5 @@
-import { Error } from '@/api/basedApiModel/BasedApiResponseModel';
-import { BasedViewModel } from '@/utils/basedModel/BasedViewModel';
+import { Error } from 'api/basedApiModel/BasedApiResponseModel';
+import { BasedViewModel } from 'utils/basedModel/BasedViewModel';
 import { BehaviorSubject } from 'rxjs';
 import { injectable } from 'tsyringe';
 import { ChatInjection } from '../../diInjection/ChatInjection';

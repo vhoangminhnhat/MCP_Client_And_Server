@@ -19,8 +19,13 @@ export class AuthController {
     );
   }
 
-  @Post('singUp')
+  @Post('sign-up')
   async signUp(@Body() dto: SignUpDto) {
+    return this.signUpUseCase.execute(dto);
+  }
+
+  @Post('singUp')
+  async signUpBackwardCompatible(@Body() dto: SignUpDto) {
     return this.signUpUseCase.execute(dto);
   }
 }

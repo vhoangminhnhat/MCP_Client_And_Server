@@ -22,6 +22,7 @@ export class UserRepository implements IUserRepository {
       data: {
         id: user.id,
         email: user.email,
+        phoneNumber: '',
         password: user.passwordHash,
         role: user.role,
       },

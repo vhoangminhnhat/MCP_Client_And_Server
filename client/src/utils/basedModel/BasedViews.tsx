@@ -1,5 +1,5 @@
 import { ClientContext } from "context/AuthenticationContext";
-import { Component, ContextType } from "react";
+import { Component } from "react";
 import { Params } from "react-router-dom";
 import { NextObserver, Observable } from "rxjs";
 import { DependencyInjection } from "../di/DependecyInjection";
@@ -18,7 +18,6 @@ export abstract class BasedViews<
   SS extends Object,
 > extends Component<IBasedViews & S, SS> {
   static contextType = ClientContext;
-  declare context: ContextType<typeof ClientContext>;
   viewModel: VM;
 
   constructor(props: IBasedViews & S) {
@@ -39,7 +38,7 @@ export abstract class BasedViews<
   }
 
   protected bindViewModel(): void {
-    this.viewModel.context = this.context;
+    this.viewModel.context = this.context as typeof this.viewModel.context;
     if (this.props.sharedVM) {
       this.viewModel = this.props.sharedVM as VM;
     }

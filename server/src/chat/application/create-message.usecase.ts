@@ -1,5 +1,6 @@
 import { BadRequestException, Inject, Injectable } from '@nestjs/common';
 import { randomUUID } from 'crypto';
+import { okResponse } from '@/common/models/api-response.model';
 import { ChatMessage } from '../domain/entity/chat-message.entity';
 import { IChatRepository } from '../domain/interface/chat.repository.interface';
 import { ChatToken } from '../domain/token/chat.repository.token';
@@ -28,6 +29,7 @@ export class CreateMessageUseCase {
       new Date(),
     );
 
-    return this.chatRepository.createMessage(message);
+    const created = await this.chatRepository.createMessage(message);
+    return okResponse(created, 'Send message successfully');
   }
 }

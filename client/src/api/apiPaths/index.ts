@@ -1,12 +1,12 @@
 export class VersionPaths {
   static getVersionPath(path: string, version: string) {
-    return `${process.env.REACT_BASE_URL}/api/${version}/${path}`;
+    return `/api/${version}/${path}`;
   }
 }
 
 export class AuthenApiPath {
-  static login = VersionPaths.getVersionPath("login", "v1");
-  static signUp = VersionPaths.getVersionPath("signUp", "v1");
+  static login = VersionPaths.getVersionPath("auth/login", "v1");
+  static signUp = VersionPaths.getVersionPath("auth/sign-up", "v1");
 }
 
 export class ChatApiPath {

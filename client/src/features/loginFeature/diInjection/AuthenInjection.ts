@@ -1,7 +1,8 @@
-import { DependencyInjection } from "@/utils/di/DependecyInjection";
+import { DependencyInjection } from "utils/di/DependecyInjection";
 import { AuthenImpl } from "../data/model/AuthenImpl";
 import { IAuthenRepository } from "../domain/repositories/IAuthenRepository";
 import { AuthenUseCase } from "../domain/useCases/AuthenUseCase";
+import { AuthenViewModel } from "../presentation/viewModel/AuthenViewModel";
 import { AuthenToken } from "./AuthenToken";
 
 export class AuthenInjection {
@@ -16,6 +17,12 @@ export class AuthenInjection {
       AuthenToken.AuthenUseCase,
       AuthenUseCase,
       "otherRepo",
+    );
+
+    DependencyInjection.register<AuthenViewModel>(
+      AuthenToken.AuthenViewModel,
+      AuthenViewModel,
+      "viewModel",
     );
   }
 

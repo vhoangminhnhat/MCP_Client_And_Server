@@ -1,5 +1,5 @@
-import { BasedApiResponseModel } from "@/api/basedApiModel/BasedApiResponseModel";
-import { dummySidebar } from "@/utils/dummy/DummySidebar";
+import { BasedApiResponseModel } from "api/basedApiModel/BasedApiResponseModel";
+import { dummySidebar } from "utils/dummy/DummySidebar";
 import { IConfigRepository } from "../../domain/repositories/IConfigRepository";
 import {
   MenuConfigModel,

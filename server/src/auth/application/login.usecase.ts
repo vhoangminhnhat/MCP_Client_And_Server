@@ -1,6 +1,7 @@
 import { Inject, Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
+import { okResponse } from '@/common/models/api-response.model';
 import { IUserRepository } from '../domain/interface/user.repository.interface';
 import { UserToken } from '../domain/token/user.repository.token';
 
@@ -31,9 +32,12 @@ export class LoginUseCase {
       role: user.role,
     };
 
-    return {
-      user: payload,
-      accessToken: this.jwtService.sign(payload),
-    };
+    return okResponse(
+      {
+        user: payload,
+        accessToken: this.jwtService.sign(payload),
+      },
+      'Login successfully',
+    );
   }
 }

@@ -1,7 +1,8 @@
-import { BasedApiResponseModel } from "@/api/basedApiModel/BasedApiResponseModel";
-import { strings } from "@/utils/localizedStrings";
+import { BasedApiResponseModel } from "api/basedApiModel/BasedApiResponseModel";
+import { strings } from "utils/localizedStrings";
 import { injectable } from "tsyringe";
 import { AuthenRequestModel } from "../../data/dto/AuthenRequestModel";
+import { AuthenReponseEntity } from "../entities/AuthenResponseEntity";
 import { AuthenEntity } from "../entities/AuthenEntity";
 import { IAuthenRepository } from "../repositories/IAuthenRepository";
 import { AuthenInjection } from "../../diInjection/AuthenInjection";
@@ -16,7 +17,7 @@ export class AuthenUseCase {
 
   async login(
     body: AuthenRequestModel,
-  ): Promise<BasedApiResponseModel<AuthenEntity>> {
+  ): Promise<BasedApiResponseModel<AuthenReponseEntity>> {
     const isValidateEmail = AuthenEntity.checkEmail(body?.email || "");
     if (isValidateEmail) {
       return await this.authenRepository.login(body);
@@ -31,7 +32,7 @@ export class AuthenUseCase {
 
   async singUp(
     body: AuthenRequestModel,
-  ): Promise<BasedApiResponseModel<AuthenEntity>> {
+  ): Promise<BasedApiResponseModel<AuthenReponseEntity>> {
     const isValidatePassword = AuthenEntity.validatePassword(
       body?.password || "",
     );

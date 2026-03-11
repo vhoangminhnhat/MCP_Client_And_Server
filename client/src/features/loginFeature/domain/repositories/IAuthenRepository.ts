@@ -1,10 +1,12 @@
-import { BasedApiResponseModel } from "@/api/basedApiModel/BasedApiResponseModel";
+import { BasedApiResponseModel } from "api/basedApiModel/BasedApiResponseModel";
 import { AuthenRequestModel } from "../../data/dto/AuthenRequestModel";
-import { AuthenEntity } from "../entities/AuthenEntity";
+import { AuthenReponseEntity } from "../entities/AuthenResponseEntity";
 
 export interface IAuthenRepository {
-  login(body: AuthenRequestModel): Promise<BasedApiResponseModel<AuthenEntity>>;
+  login(
+    body: AuthenRequestModel,
+  ): Promise<BasedApiResponseModel<AuthenReponseEntity>>;
   singUp(
     body: AuthenRequestModel,
-  ): Promise<BasedApiResponseModel<AuthenEntity>>;
+  ): Promise<BasedApiResponseModel<AuthenReponseEntity>>;
 }

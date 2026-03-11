@@ -1,4 +1,4 @@
-import { ClientContext } from "@/context/AuthenticationContext";
+import { ClientContext } from "context/AuthenticationContext";
 import { ContextType } from "react";
 import { Observable, skip, Subscription } from "rxjs";
 

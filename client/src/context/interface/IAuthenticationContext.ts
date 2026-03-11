@@ -1,4 +1,4 @@
-import { SidebarMenuConfigModel } from "@/generalComponents/layoutComponent/sidebar/data/dto/SidebarMenuConfigModel";
+import { SidebarMenuConfigModel } from "generalComponents/layoutComponent/sidebar/data/dto/SidebarMenuConfigModel";
 import { Dispatch, SetStateAction } from "react";
 
 export interface IAuthenticationContext {
