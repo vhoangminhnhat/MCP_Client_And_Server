@@ -1,7 +1,7 @@
 import { DataFormat } from "utils/format/DataFormat";
 import ModelConverter from "utils/modelConverter";
 import axios from "axios";
-import { BasedApiResponseModel } from "../basedApiModel/BasedApiResponseModel";
+import { BasedApiResponseModel } from "../../appCore/basedModel/basedApiModel/BasedApiResponseModel";
 import IApiClient from "./interface/IApiClient";
 
 const serializeParams = (params: Record<string, any>): string => {

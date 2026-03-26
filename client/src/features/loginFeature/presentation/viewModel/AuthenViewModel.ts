@@ -1,5 +1,5 @@
-import { Error } from "api/basedApiModel/BasedApiResponseModel";
-import { BasedViewModel } from "utils/basedModel/BasedViewModel";
+import { BasedViewModel } from "@/appCore/basedModel/BasedViewModel";
+import { Error } from "@/appCore/basedModel/basedApiModel/BasedApiResponseModel";
 import { BehaviorSubject } from "rxjs";
 import { injectable } from "tsyringe";
 import { AuthenInjection } from "../../diInjection/AuthenInjection";

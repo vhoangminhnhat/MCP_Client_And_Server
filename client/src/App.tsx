@@ -18,15 +18,15 @@ import "./App.css";
 import { AuthenContext } from "./context/AuthenticationContext";
 import { IAuthenticationContext } from "./context/interface/IAuthenticationContext";
 import { AuthenToken } from "./features/loginFeature/diInjection/AuthenToken";
-import LoginFeature from "./features/loginFeature/presentation/views/LoginFeature";
 import { higherOrderComponent } from "./generalComponents/higherOrderComponent/HigherOrderComponent";
 import PrivateRoute from "./generalComponents/layoutComponent/privateRoute/PrivateRoute";
 import { MenuConfigModel } from "./generalComponents/layoutComponent/sidebar/data/dto/SidebarMenuConfigModel";
 import NotFoundComponent from "./generalComponents/notFoundComponent/NotFoundComponent";
 import ClientPages from "./navigation/ClientPages";
-import { IBasedViews } from "./utils/basedModel/BasedViews";
-import { DependencyInjection } from "./utils/di/DependecyInjection";
+import { DependencyInjection } from "./appCore/di/DependecyInjection";
 import { DataFormat } from "./utils/format/DataFormat";
+import { IBasedViews } from "./appCore/basedModel/BasedViews";
+import LoginFeature from "./features/loginFeature/presentation/views/LoginFeature";
 
 function App() {
   const location = useLocation();

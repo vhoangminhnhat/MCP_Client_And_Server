@@ -1,4 +1,4 @@
-import { BasedApiResponseModel } from "api/basedApiModel/BasedApiResponseModel";
+import { BasedApiResponseModel } from "@/appCore/basedModel/basedApiModel/BasedApiResponseModel";
 import { AuthenRequestModel } from "../../data/dto/AuthenRequestModel";
 import { AuthenReponseEntity } from "../entities/AuthenResponseEntity";
 

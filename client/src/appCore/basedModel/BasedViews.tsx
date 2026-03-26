@@ -2,7 +2,7 @@ import { ClientContext } from "context/AuthenticationContext";
 import { Component } from "react";
 import { Params } from "react-router-dom";
 import { NextObserver, Observable } from "rxjs";
-import { DependencyInjection } from "../di/DependecyInjection";
+import { DependencyInjection } from "../../appCore/di/DependecyInjection";
 import { BasedViewModel } from "./BasedViewModel";
 
 export interface IBasedViews {

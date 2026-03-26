@@ -1,4 +1,4 @@
-import { BasedApiResponseModel } from 'api/basedApiModel/BasedApiResponseModel';
+import { BasedApiResponseModel } from '@/appCore/basedModel/basedApiModel/BasedApiResponseModel';
 import { injectable } from 'tsyringe';
 import { ChatInjection } from '../../diInjection/ChatInjection';
 import { ChatMessageRequestEntity } from '../entities/ChatMessageRequestEntity';

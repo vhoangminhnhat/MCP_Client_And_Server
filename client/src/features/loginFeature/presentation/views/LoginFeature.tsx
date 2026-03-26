@@ -1,9 +1,9 @@
-import { CachedKeyEnum } from "utils/enum/CachedKeyEnum";
-import { ClientHelpers } from "utils/helpers";
-import { productCache } from "utils/cache/ProductCache";
-import { BasedViews, IBasedViews } from "utils/basedModel/BasedViews";
+import { BasedViews, IBasedViews } from "@/appCore/basedModel/BasedViews";
 import { Button, Card, Checkbox, Form, Input, Space, Typography } from "antd";
 import { ReactNode } from "react";
+import { productCache } from "utils/cache/ProductCache";
+import { CachedKeyEnum } from "utils/enum/CachedKeyEnum";
+import { ClientHelpers } from "utils/helpers";
 import { ILoginFeature, ILoginState } from "../interfaces/IAuthen";
 import { AuthenViewModel } from "../viewModel/AuthenViewModel";
 
@@ -39,8 +39,7 @@ export default class LoginFeature extends BasedViews<
     this.subscribeToVM(this.viewModel.output.onLoginSuccess, (res) => {
       if (!res?.accessToken) return;
 
-      const isRemember =
-        localStorage.getItem("isSavedForNextLogin") === "true";
+      const isRemember = localStorage.getItem("isSavedForNextLogin") === "true";
 
       if (isRemember) {
         localStorage.setItem(CachedKeyEnum.mainToken, res.accessToken);
@@ -61,7 +60,11 @@ export default class LoginFeature extends BasedViews<
     });
 
     this.subscribeToVM(this.viewModel.output.onSignUpSuccess, () => {
-      ClientHelpers.getMessage("Sign up successfully. Please login", 2, "success");
+      ClientHelpers.getMessage(
+        "Sign up successfully. Please login",
+        2,
+        "success",
+      );
       this.setState({ mode: "login" });
     });
 
@@ -121,7 +124,13 @@ export default class LoginFeature extends BasedViews<
             <Form.Item
               label="Email"
               name="email"
-              rules={[{ required: true, type: "email", message: "Valid email is required" }]}
+              rules={[
+                {
+                  required: true,
+                  type: "email",
+                  message: "Valid email is required",
+                },
+              ]}
             >
               <Input placeholder="name@company.com" />
             </Form.Item>
@@ -129,7 +138,9 @@ export default class LoginFeature extends BasedViews<
             <Form.Item
               label="Password"
               name="password"
-              rules={[{ required: true, min: 6, message: "At least 6 characters" }]}
+              rules={[
+                { required: true, min: 6, message: "At least 6 characters" },
+              ]}
             >
               <Input.Password placeholder="Enter your password" />
             </Form.Item>

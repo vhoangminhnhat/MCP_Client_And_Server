@@ -1,5 +1,5 @@
-import { ClientModuleEntity } from "modules/domain/entities/ClientModuleEntity";
-import { RouteModuleEntity } from "modules/domain/entities/RouteModuleEntity";
+import { ClientModuleEntity } from "@/appCore/modules/domain/entities/ClientModuleEntity";
+import { RouteModuleEntity } from "@/appCore/modules/domain/entities/RouteModuleEntity";
 import { lazy } from "react";
 import { injectable } from "tsyringe";
 import { AuthenInjection } from "../diInjection/AuthenInjection";

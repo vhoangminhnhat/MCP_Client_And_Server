@@ -1,4 +1,4 @@
-import { BasedApiResponseModel } from "api/basedApiModel/BasedApiResponseModel";
+import { BasedApiResponseModel } from "@/appCore/basedModel/basedApiModel/BasedApiResponseModel";
 import { strings } from "utils/localizedStrings";
 import { injectable } from "tsyringe";
 import { AuthenRequestModel } from "../../data/dto/AuthenRequestModel";

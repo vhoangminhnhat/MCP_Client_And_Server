@@ -1,4 +1,4 @@
-import { ClientModuleInjection } from "modules/di/ClientModuleInjection";
+import { ClientModuleInjection } from "@/appCore/modules/di/ClientModuleInjection";
 import { ChatInjection } from "features/chatFeature/diInjection/ChatInjection";
 import { AuthenInjection } from "features/loginFeature/diInjection/AuthenInjection";
 import { SidebarInjection } from "generalComponents/layoutComponent/sidebar/domain/entities/SidebarInjection";

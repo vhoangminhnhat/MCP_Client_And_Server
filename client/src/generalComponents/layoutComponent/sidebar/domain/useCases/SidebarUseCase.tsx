@@ -1,4 +1,4 @@
-import { BasedApiResponseModel } from "api/basedApiModel/BasedApiResponseModel";
+import { BasedApiResponseModel } from "@/appCore/basedModel/basedApiModel/BasedApiResponseModel";
 import { injectable } from "tsyringe";
 import { SidebarMenuConfigModel } from "../../data/dto/SidebarMenuConfigModel";
 import { SidebarInjection } from "../entities/SidebarInjection";
