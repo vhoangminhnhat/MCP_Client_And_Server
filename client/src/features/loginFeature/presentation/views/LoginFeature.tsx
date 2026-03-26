@@ -1,4 +1,4 @@
-import { BasedViews, IBasedViews } from "@/appCore/basedModel/BasedViews";
+import { BasedViews, IBasedViews } from "appCore/basedModel/BasedViews";
 import { Button, Card, Checkbox, Form, Input, Space, Typography } from "antd";
 import { ReactNode } from "react";
 import { productCache } from "utils/cache/ProductCache";

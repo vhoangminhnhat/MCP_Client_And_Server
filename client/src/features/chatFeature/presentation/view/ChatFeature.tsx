@@ -1,4 +1,4 @@
-import { BasedViews, IBasedViews } from "@/appCore/basedModel/BasedViews";
+import { BasedViews, IBasedViews } from "appCore/basedModel/BasedViews";
 import { Button, Card, Input, List, Spin, Typography } from "antd";
 import { IAuthenticationContext } from "context/interface/IAuthenticationContext";
 import dayjs from "dayjs";

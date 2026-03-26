@@ -1,5 +1,5 @@
 import { AuthenApiPath } from "api/apiPaths";
-import { BasedApiResponseModel } from "@/appCore/basedModel/basedApiModel/BasedApiResponseModel";
+import { BasedApiResponseModel } from "appCore/basedModel/basedApiModel/BasedApiResponseModel";
 import client from "api/client";
 import { injectable } from "tsyringe";
 import { AuthenReponseEntity } from "../../domain/entities/AuthenResponseEntity";

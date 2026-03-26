@@ -1,4 +1,4 @@
-import { DependencyInjection } from "@/appCore/di/DependecyInjection";
+import { DependencyInjection } from "appCore/di/DependecyInjection";
 import { ChatImpl } from "../data/ChatImpl";
 import { IChatRepository } from "../domain/repositories/IChatRepository";
 import { ChatUseCase } from "../domain/useCases/ChatUseCase";

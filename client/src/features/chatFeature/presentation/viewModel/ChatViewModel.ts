@@ -1,11 +1,11 @@
-import { Error } from '@/appCore/basedModel/basedApiModel/BasedApiResponseModel';
+import { Error } from 'appCore/basedModel/basedApiModel/BasedApiResponseModel';
+import { BasedViewModel } from 'appCore/basedModel/BasedViewModel';
 import { BehaviorSubject } from 'rxjs';
 import { injectable } from 'tsyringe';
 import { ChatInjection } from '../../diInjection/ChatInjection';
 import { ChatMessageRequestEntity } from '../../domain/entities/ChatMessageRequestEntity';
 import { ChatMessageResponseEntity } from '../../domain/entities/ChatMessageResponseEntity';
 import { ChatUseCase } from '../../domain/useCases/ChatUseCase';
-import { BasedViewModel } from '@/appCore/basedModel/BasedViewModel';
 
 export class ChatInput implements Disposable {
   public loading = new BehaviorSubject<boolean>(false);

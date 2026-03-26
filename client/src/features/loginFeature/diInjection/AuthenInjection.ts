@@ -1,4 +1,4 @@
-import { DependencyInjection } from "@/appCore/di/DependecyInjection";
+import { DependencyInjection } from "appCore/di/DependecyInjection";
 import { AuthenImpl } from "../data/model/AuthenImpl";
 import { IAuthenRepository } from "../domain/repositories/IAuthenRepository";
 import { AuthenUseCase } from "../domain/useCases/AuthenUseCase";

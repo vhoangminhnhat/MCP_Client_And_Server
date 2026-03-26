@@ -8,7 +8,7 @@ export class SidebarMenuEntity {
         return new MenuConfigModel(
           item.name,
           item.path,
-          item.componentName,
+          item.routeKey,
           item.icon,
           item.featureKey,
           this.mapMenuItems(item.subMenu),

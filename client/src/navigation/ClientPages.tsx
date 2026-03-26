@@ -1,5 +1,5 @@
 import NotFoundComponent from "generalComponents/notFoundComponent/NotFoundComponent";
-import { ClientModuleInjection } from "@/appCore/modules/di/ClientModuleInjection";
+import { ClientModuleInjection } from "appCore/modules/di/ClientModuleInjection";
 import { ComponentType, FC, LazyExoticComponent } from "react";
 
 export interface IClientPages {

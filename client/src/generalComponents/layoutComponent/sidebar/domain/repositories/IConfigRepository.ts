@@ -1,4 +1,4 @@
-import { BasedApiResponseModel } from "@/appCore/basedModel/basedApiModel/BasedApiResponseModel";
+import { BasedApiResponseModel } from "appCore/basedModel/basedApiModel/BasedApiResponseModel";
 import { SidebarMenuConfigModel } from "../../data/dto/SidebarMenuConfigModel";
 
 export interface IConfigRepository {

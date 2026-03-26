@@ -4,7 +4,7 @@ export class MenuConfigModel {
   constructor(
     public name: string,
     public path: string,
-    public componentName: string,
+    public routeKey: string,
     public icon: ReactNode,
     public featureKey: Array<string>,
     public subMenu: MenuConfigModel[] = [],

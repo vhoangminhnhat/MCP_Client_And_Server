@@ -1,6 +1,4 @@
-import { ClientModuleInjection } from "@/appCore/modules/di/ClientModuleInjection";
-import { ChatInjection } from "features/chatFeature/diInjection/ChatInjection";
-import { AuthenInjection } from "features/loginFeature/diInjection/AuthenInjection";
+import { ClientModuleInjection } from "appCore/modules/di/ClientModuleInjection";
 import { SidebarInjection } from "generalComponents/layoutComponent/sidebar/domain/entities/SidebarInjection";
 import { container } from "tsyringe";
 import { constructor } from "tsyringe/dist/typings/types";
@@ -26,8 +24,6 @@ export class DependencyInjection {
   private static registerAllTokens() {
     ClientModuleInjection.initInjections();
     SidebarInjection.injectSidebarConfig();
-    AuthenInjection.injectAuthen();
-    ChatInjection.injectChat();
   }
 
   private static checkInjectionAndResolve() {

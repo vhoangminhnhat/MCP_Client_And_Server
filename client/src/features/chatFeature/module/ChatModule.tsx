@@ -1,7 +1,7 @@
 import { MessageOutlined } from "@ant-design/icons";
-import { ClientModuleEntity } from "@/appCore/modules/domain/entities/ClientModuleEntity";
-import { MenuModuleEntity } from "@/appCore/modules/domain/entities/MenuModuleEntity";
-import { RouteModuleEntity } from "@/appCore/modules/domain/entities/RouteModuleEntity";
+import { ClientModuleEntity } from "appCore/modules/domain/entities/ClientModuleEntity";
+import { MenuModuleEntity } from "appCore/modules/domain/entities/MenuModuleEntity";
+import { RouteModuleEntity } from "appCore/modules/domain/entities/RouteModuleEntity";
 import { lazy } from "react";
 import { injectable } from "tsyringe";
 import { ChatInjection } from "../diInjection/ChatInjection";

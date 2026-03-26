@@ -1,6 +1,6 @@
-import { BasedApiResponseModel } from "@/appCore/basedModel/basedApiModel/BasedApiResponseModel";
-import { ClientModuleInjection } from "@/appCore/modules/di/ClientModuleInjection";
-import { MenuModuleEntity } from "@/appCore/modules/domain/entities/MenuModuleEntity";
+import { BasedApiResponseModel } from "appCore/basedModel/basedApiModel/BasedApiResponseModel";
+import { ClientModuleInjection } from "appCore/modules/di/ClientModuleInjection";
+import { MenuModuleEntity } from "appCore/modules/domain/entities/MenuModuleEntity";
 import { IConfigRepository } from "../../domain/repositories/IConfigRepository";
 import {
   MenuConfigModel,

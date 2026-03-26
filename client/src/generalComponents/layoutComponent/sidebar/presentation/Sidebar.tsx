@@ -90,7 +90,7 @@ export default class Sidebar extends Component<ISidebar, ISidebarState> {
         item: new MenuConfigModel(
           menu.name,
           menu.path,
-          menu.componentName,
+          menu.routeKey,
           <img
             src={menu?.icon as string}
             alt={menu?.name}
@@ -110,7 +110,7 @@ export default class Sidebar extends Component<ISidebar, ISidebarState> {
                   new MenuConfigModel(
                     subMenu.name,
                     subMenu.path,
-                    subMenu.componentName,
+                    subMenu.routeKey,
                     <img
                       src={subMenu?.icon as string}
                       alt={subMenu?.name}

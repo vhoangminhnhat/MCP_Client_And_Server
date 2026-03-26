@@ -62,9 +62,9 @@ function App() {
   };
 
   const mapMenuToRoutes = (menu: MenuConfigModel) => {
-    const Component = ClientPages.getPage(menu.componentName);
-    const diToken = ClientPages.getToken(menu.componentName);
-    const props = ClientPages.getAddtionalProps(menu.componentName);
+    const Component = ClientPages.getPage(menu.routeKey);
+    const diToken = ClientPages.getToken(menu.routeKey);
+    const props = ClientPages.getAddtionalProps(menu.routeKey);
 
     if (!Component) return <>{loadingScreen()}</>;
 
@@ -97,7 +97,7 @@ function App() {
         />
         <Route
           path={`${menu?.path}/:searchCode`}
-          key={`${menu?.name} - ${menu?.componentName} - ${menu?.path} - searchCode`}
+          key={`${menu?.name} - ${menu?.routeKey} - ${menu?.path} - searchCode`}
           element={
             <PrivateRoute path={`${menu?.path}/:searchCode`}>
               {!diInjected ? null : (
