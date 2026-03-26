@@ -1,33 +1,35 @@
-import { DependencyInjection } from 'utils/di/DependecyInjection';
-import { ChatImpl } from '../data/ChatImpl';
-import { IChatRepository } from '../domain/repositories/IChatRepository';
-import { ChatUseCase } from '../domain/useCases/ChatUseCase';
-import { ChatViewModel } from '../presentation/viewModel/ChatViewModel';
-import { ChatToken } from './ChatToken';
+import { DependencyInjection } from "utils/di/DependecyInjection";
+import { ChatImpl } from "../data/ChatImpl";
+import { IChatRepository } from "../domain/repositories/IChatRepository";
+import { ChatUseCase } from "../domain/useCases/ChatUseCase";
+import { ChatViewModel } from "../presentation/viewModel/ChatViewModel";
+import { ChatToken } from "./ChatToken";
 
 export class ChatInjection {
   static injectChat() {
     DependencyInjection.register<IChatRepository>(
       ChatToken.IChatRepository,
       ChatImpl,
-      'otherRepo',
+      "otherRepo",
     );
 
     DependencyInjection.register<ChatUseCase>(
       ChatToken.ChatUseCase,
       ChatUseCase,
-      'otherRepo',
+      "otherRepo",
     );
 
     DependencyInjection.register<ChatViewModel>(
       ChatToken.ChatViewModel,
       ChatViewModel,
-      'viewModel',
+      "viewModel",
     );
   }
 
   static getChatRepo() {
-    return DependencyInjection.getRepo<IChatRepository>(ChatToken.IChatRepository);
+    return DependencyInjection.getRepo<IChatRepository>(
+      ChatToken.IChatRepository,
+    );
   }
 
   static getChatUseCase() {
