@@ -1,5 +1,5 @@
-import { ChatModule } from "@/features/chatFeature/module/ChatModule";
-import { AuthModule } from "@/features/loginFeature/module/AuthModule";
+import { ChatModule } from "features/chatFeature/module/ChatModule";
+import { AuthModule } from "features/loginFeature/module/AuthModule";
 import { injectable } from "tsyringe";
 import { ClientModuleEntity } from "../domain/entities/ClientModuleEntity";
 import { IModuleRegistryRepository } from "../domain/repositories/IModuleRegistyRepository";

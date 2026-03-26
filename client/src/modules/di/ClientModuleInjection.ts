@@ -1,4 +1,4 @@
-import { DependencyInjection } from "@/utils/di/DependecyInjection";
+import { DependencyInjection } from "utils/di/DependecyInjection";
 import { ModuleRegistryImpl } from "../data/ModuleRegistryImpl";
 import { IModuleRegistryRepository } from "../domain/repositories/IModuleRegistyRepository";
 import { GetModuleRoutesUseCase } from "../domain/useCases/GetModuleRoutesUseCase";

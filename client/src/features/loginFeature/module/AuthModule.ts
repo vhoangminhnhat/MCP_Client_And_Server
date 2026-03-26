@@ -1,5 +1,5 @@
-import { ClientModuleEntity } from "@/modules/domain/entities/ClientModuleEntity";
-import { RouteModuleEntity } from "@/modules/domain/entities/RouteModuleEntity";
+import { ClientModuleEntity } from "modules/domain/entities/ClientModuleEntity";
+import { RouteModuleEntity } from "modules/domain/entities/RouteModuleEntity";
 import { lazy } from "react";
 import { injectable } from "tsyringe";
 import { AuthenInjection } from "../diInjection/AuthenInjection";
@@ -15,8 +15,7 @@ export class AuthModule {
           key: "auth.main",
           path: "/login",
           component: lazy(
-            () =>
-              import("@/features/loginFeature/presentation/views/LoginFeature"),
+            () => import("features/loginFeature/presentation/views/LoginFeature"),
           ),
           token: AuthenToken.AuthenViewModel,
           isPrivate: true,

@@ -1,6 +1,6 @@
-import { ChatToken } from "features/chatFeature/diInjection/ChatToken";
 import NotFoundComponent from "generalComponents/notFoundComponent/NotFoundComponent";
-import { ComponentType, FC, LazyExoticComponent, lazy } from "react";
+import { ClientModuleInjection } from "modules/di/ClientModuleInjection";
+import { ComponentType, FC, LazyExoticComponent } from "react";
 
 export interface IClientPages {
   Component: LazyExoticComponent<FC<any> | ComponentType>;
@@ -9,14 +9,33 @@ export interface IClientPages {
 }
 
 export class ClientPages {
-  static PageKeys: Record<string, IClientPages> = {
-    ChatFeature: {
-      Component: lazy(
-        () => import("features/chatFeature/presentation/view/ChatFeature"),
-      ) as unknown as LazyExoticComponent<FC<any> | ComponentType>,
-      token: ChatToken.ChatViewModel,
-    },
-  };
+  private static PageKeys: Record<string, IClientPages> = {};
+
+  static async initPages() {
+    const moduleRegistryUseCase =
+      ClientModuleInjection.getModuleRegistryUseCase();
+    const routes = await moduleRegistryUseCase.getRoutes();
+
+    this.PageKeys = routes.reduce(
+      (acc, route) => {
+        const routeKey = route.key?.trim();
+        if (!routeKey || !route.component) {
+          return acc;
+        }
+
+        acc[routeKey] = {
+          Component: route.component as LazyExoticComponent<
+            FC<any> | ComponentType
+          >,
+          token: route.token,
+          addtionalProps: route.additionalProps,
+        };
+
+        return acc;
+      },
+      {} as Record<string, IClientPages>,
+    );
+  }
 
   static getPage(key: string): any {
     return this.PageKeys[key]?.Component || NotFoundComponent;

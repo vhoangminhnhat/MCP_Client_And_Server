@@ -1,8 +1,8 @@
-import { ClientModuleInjection } from "@/modules/di/ClientModuleInjection";
 import { injectable } from "tsyringe";
+import { ClientModuleInjection } from "../../di/ClientModuleInjection";
+import { MenuModuleEntity } from "../entities/MenuModuleEntity";
 import { IModuleRegistryRepository } from "../repositories/IModuleRegistyRepository";
 import { ValidateModulesUseCase } from "./ValidateModulesUseCase";
-import { MenuModuleEntity } from "../entities/MenuModuleEntity";
 
 @injectable()
 export class GetModuleMenusUseCase {
@@ -12,7 +12,8 @@ export class GetModuleMenusUseCase {
   constructor() {
     this.moduleRegistryRepository =
       ClientModuleInjection.getModuleRegistryRepository();
-    this.validateModulesUseCase = new ValidateModulesUseCase();
+    this.validateModulesUseCase =
+      ClientModuleInjection.getValidateModulesUseCase();
   }
 
   async execute(): Promise<MenuModuleEntity[]> {

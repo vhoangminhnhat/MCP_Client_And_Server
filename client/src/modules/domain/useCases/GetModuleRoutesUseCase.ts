@@ -12,7 +12,8 @@ export class GetModuleRoutesUseCase {
   constructor() {
     this.moduleRegistryRepository =
       ClientModuleInjection.getModuleRegistryRepository();
-    this.validateModulesUseCase = new ValidateModulesUseCase();
+    this.validateModulesUseCase =
+      ClientModuleInjection.getValidateModulesUseCase();
   }
 
   async execute(): Promise<RouteModuleEntity[]> {

@@ -38,6 +38,7 @@ function App() {
   const initDependency = async () => {
     try {
       await DependencyInjection.initInjections();
+      await ClientPages.initPages();
       setDiInjected(true);
     } catch (error) {
       console.error("Dependency Injection error:", error);
