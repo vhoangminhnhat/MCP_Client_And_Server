@@ -1,8 +1,6 @@
-import { BasedViews, IBasedViews } from "appCore/basedModel/BasedViews";
 import { Button, Card, Checkbox, Form, Input, Space, Typography } from "antd";
+import { BasedViews, IBasedViews } from "appCore/basedModel/BasedViews";
 import { ReactNode } from "react";
-import { productCache } from "utils/cache/ProductCache";
-import { CachedKeyEnum } from "utils/enum/CachedKeyEnum";
 import { ClientHelpers } from "utils/helpers";
 import { ILoginFeature, ILoginState } from "../interfaces/IAuthen";
 import { AuthenViewModel } from "../viewModel/AuthenViewModel";
@@ -39,22 +37,6 @@ export default class LoginFeature extends BasedViews<
     this.subscribeToVM(this.viewModel.output.onLoginSuccess, (res) => {
       if (!res?.accessToken) return;
 
-      const isRemember = localStorage.getItem("isSavedForNextLogin") === "true";
-
-      if (isRemember) {
-        localStorage.setItem(CachedKeyEnum.mainToken, res.accessToken);
-        sessionStorage.removeItem(CachedKeyEnum.mainToken);
-      } else {
-        sessionStorage.setItem(CachedKeyEnum.mainToken, res.accessToken);
-        localStorage.removeItem(CachedKeyEnum.mainToken);
-      }
-
-      productCache.saveCache({
-        key: "user",
-        product: res.user || {},
-        needExpired: false,
-      });
-
       ClientHelpers.getMessage("Login successfully", 2, "success");
       this.props.navigate("/chat");
     });
@@ -79,12 +61,8 @@ export default class LoginFeature extends BasedViews<
     const payload = {
       email: values.email,
       password: values.password,
+      remember: values.remember,
     };
-
-    localStorage.setItem(
-      "isSavedForNextLogin",
-      values.remember ? "true" : "false",
-    );
 
     if (this.state.mode === "login") {
       this.connectToVM(this.viewModel.input.login, payload);

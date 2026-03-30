@@ -1,11 +1,13 @@
 import { BasedViewModel } from "appCore/basedModel/BasedViewModel";
 import { Error } from "appCore/basedModel/basedApiModel/BasedApiResponseModel";
+import { AppStateService } from "appCore/states/services/AppStateService";
 import { BehaviorSubject } from "rxjs";
 import { injectable } from "tsyringe";
 import { AuthenInjection } from "../../diInjection/AuthenInjection";
 import { AuthenEntity } from "../../domain/entities/AuthenEntity";
 import { AuthenReponseEntity } from "../../domain/entities/AuthenResponseEntity";
 import { AuthenUseCase } from "../../domain/useCases/AuthenUseCase";
+import { authActions } from "../../state/AuthSlice";
 
 export class AuthenInput implements Disposable {
   public loading = new BehaviorSubject<boolean>(false);
@@ -46,6 +48,13 @@ export class AuthenViewModel extends BasedViewModel<AuthenInput, AuthenOutput> {
       try {
         const response = await this.authenUseCase.login(body);
         if (response?.data && response?.code !== -999) {
+          AppStateService.dispatch(
+            authActions.setAuthSession({
+              accessToken: response.data.accessToken,
+              user: response.data.user,
+              remember: body.remember,
+            }),
+          );
           this.output.onLoginSuccess.next(response.data);
         } else {
           this.output.onError.next({

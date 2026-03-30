@@ -1,6 +1,7 @@
 export class AuthenEntity {
   email?: string | undefined;
   password?: string | undefined;
+  remember?: boolean | undefined;
 
   static checkEmail(email: string) {
     const regex = /^\S+@\S+\.\S+$/;

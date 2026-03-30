@@ -1,6 +1,7 @@
 import "reflect-metadata";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router } from "react-router-dom";
+import AppStateProvider from "appCore/states/providers/AppStateProvider";
 import App from "./App";
 import { ContextProvider } from "./context/AuthenticationContext";
 import "./index.css";
@@ -8,11 +9,13 @@ import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root")!);
 root.render(
-  <Router>
-    <ContextProvider>
-      <App />
-    </ContextProvider>
-  </Router>,
+  <AppStateProvider>
+    <Router>
+      <ContextProvider>
+        <App />
+      </ContextProvider>
+    </Router>
+  </AppStateProvider>,
 );
 
 // If you want to start measuring performance in your app, pass a function
